@@ -1,0 +1,79 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full page background */
+body {
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Container for text input */
+.container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Heading */
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(45deg, #ff6ec7, #ff7b9c);
+    -webkit-background-clip: text;
+    margin-bottom: 20px;
+}
+
+/* Textarea input styles */
+textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: 2px solid #ff7e5f;
+    background-color: #fff;
+    color: #333;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    min-height: 150px;
+}
+
+/* Focus state for textarea */
+textarea:focus {
+    outline: none;
+    border-color: #feb47b;
+    background-color: #ff7e5f;
+    color: white;
+}
+
+/* Displaying the output text with gradient */
+#output .output-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(45deg, #ff6ec7, #ff7b9c);
+    -webkit-background-clip: text;
+    margin-top: 20px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    textarea {
+        font-size: 1rem;
+    }
+}
