@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegance - Fashion Show Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="designers.html">Designers</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Elegance Fashion Show 2023</h1>
+            <p>Experience the latest trends and designs from top fashion houses</p>
+        </section>
+
+        <section class="components-showcase">
+            <h2>Component Showcase</h2>
+
+            <div class="component-group">
+                <h3>Buttons</h3>
+                <a href="#" class="btn btn-link">Link Button</a>
+                <button class="btn btn-outline">Outline Button</button>
+                <button class="btn btn-primary">Primary Button</button>
+                <button class="btn btn-primary btn-sm">Small Button</button>
+                <button class="btn btn-primary btn-lg">Large Button</button>
+                <button class="btn btn-icon"><i class="fas fa-heart"></i> Like</button>
+                <button class="btn btn-icon-only"><i class="fas fa-cog"></i></button>
+                <button class="btn btn-primary" disabled>Disabled Button</button>
+            </div>
+
+            <div class="component-group">
+                <h3>Radio Buttons and Checkboxes</h3>
+                <div class="radio-input">
+                    <label class="label">
+                        <input type="radio" id="value-1" checked name="value-radio" value="value-1" />
+                        <p class="text">Web Designer</p>
+                    </label>
+                    <label class="label">
+                        <input type="radio" id="value-2" name="value-radio" value="value-2" />
+                        <p class="text">Full-Stack Developer</p>
+                    </label>
+                    <label class="label">
+                        <input type="radio" id="value-3" name="value-radio" value="value-3" />
+                        <p class="text">Machine Learning</p>
+                    </label>
+                    <label class="label">
+                        <input type="radio" id="value-4" name="value-radio" value="value-4" />
+                        <p class="text">AI Intern</p>
+                    </label>
+                    <label class="label">
+                        <input type="radio" id="value-5" name="value-radio" value="value-5" />
+                        <p class="text">MERN Stack</p>
+                    </label>
+                </div>
+                <div class="size">
+                    <label class="label">
+                        <input type="radio" class="r1" name="size-radio" required />
+                        <p class="textt">Not Relevant</p>
+                    </label>
+                    <label class="label">
+                        <input type="radio" class="r2" name="size-radio" required />
+                        <p class="textt">Relevant</p>
+                    </label>
+                    <label class="label">
+                        <input type="radio" class="r3" name="size-radio" required />
+                        <p class="textt">Very Relevant</p>
+                    </label>
+                </div>
+                <div class="box1">
+                    <div class="singlecheck">
+                        <p>Select your Branch</p>
+                        <input type="checkbox" id="option1" name="single-option" class="checkbox-input">
+                        <label for="option1" class="checkbox-label">CSM</label>
+
+                        <input type="checkbox" id="option2" name="single-option" class="checkbox-input">
+                        <label for="option2" class="checkbox-label">CSE</label>
+
+                        <input type="checkbox" id="option3" name="single-option" class="checkbox-input">
+                        <label for="option3" class="checkbox-label">EEE</label>
+
+                        <input type="checkbox" id="option4" name="single-option" class="checkbox-input">
+                        <label for="option4" class="checkbox-label">ECE</label>
+
+                        <input type="checkbox" id="option5" name="single-option" class="checkbox-input">
+                        <label for="option5" class="checkbox-label">CSD</label>
+
+                        <input type="checkbox" id="option6" name="single-option" class="checkbox-input" disabled>
+                        <label for="option6" class="checkbox-label">MECH</label>
+                    </div>
+
+                    <div class="multiplecheck">
+                        <h4>Skills</h4>
+                        <p>Mention Your Skills (Can Select Multiple)</p>
+                        <input type="checkbox" id="skill1" name="skills" class="checkbox-input">
+                        <label for="skill1" class="checkbox-label">Web Technologies</label><b>(req*)</b>
+
+                        <input type="checkbox" id="skill2" name="skills" class="checkbox-input">
+                        <label for="skill2" class="checkbox-label">MySQL</label>
+
+                        <input type="checkbox" id="skill3" name="skills" class="checkbox-input">
+                        <label for="skill3" class="checkbox-label">Python</label>
+
+                        <input type="checkbox" id="skill4" name="skills" class="checkbox-input">
+                        <label for="skill4" class="checkbox-label">Circuits</label>
+
+                        <input type="checkbox" id="skill5" name="skills" class="checkbox-input">
+                        <label for="skill5" class="checkbox-label">CAD/CAM</label>
+                    </div>
+
+                    <div class="succ">
+                        <p>How's the Session?</p>
+                        <input type="checkbox" class="c1" id="c1">
+                        <label for="c1" class="c1">Bad</label>
+                        <input type="checkbox" class="c2" id="c2">
+                        <label for="c2" class="c2">Good</label>
+                        <input type="checkbox" class="c3" id="c3">
+                        <label for="c3" class="c3">Excellent</label>
+                    </div>
+
+                    <p>Rating</p>
+                    <div class="star-container" id="star-container">
+                        <svg class="star" data-value="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><path d="M12 .587l3.668 7.431 8.232 1.151-6 5.905 1.454 8.372L12 19.264 5.646 23.446l1.454-8.372-6-5.905 8.232-1.151z"/></svg>
+                        <svg class="star" data-value="2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><path d="M12 .587l3.668 7.431 8.232 1.151-6 5.905 1.454 8.372L12 19.264 5.646 23.446l1.454-8.372-6-5.905 8.232-1.151z"/></svg>
+                        <svg class="star" data-value="3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><path d="M12 .587l3.668 7.431 8.232 1.151-6 5.905 1.454 8.372L12 19.264 5.646 23.446l1.454-8.372-6-5.905 8.232-1.151z"/></svg>
+                        <svg class="star" data-value="4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><path d="M12 .587l3.668 7.431 8.232 1.151-6 5.905 1.454 8.372L12 19.264 5.646 23.446l1.454-8.372-6-5.905 8.232-1.151z"/></svg>
+                        <svg class="star" data-value="5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><path d="M12 .587l3.668 7.431 8.232 1.151-6 5.905 1.454 8.372L12 19.264 5.646 23.446l1.454-8.372-6-5.905 8.232-1.151z"/></svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-group">
+                <h3>Avatars</h3>
+                <h4>Avatar with Text</h4>
+                <div id="avatars-text" class="avatars"></div>
+                <h4>Avatar with Images</h4>
+                <div id="avatars-image" class="avatars"></div>
+                <h4>Different Sizes</h4>
+                <div id="sizes" class="avatars"></div>
+                <h4>Variants</h4>
+                <div id="variants" class="variants"></div>
+            </div>
+
+            <div class="component-group">
+                <h3>Text Input</h3>
+                <div class="text-input-container">
+                    <h4>Enter Your Text</h4>
+                    <textarea id="userInput" placeholder="Type something..." required></textarea>
+                    <div id="output">
+                        <p class="output-text"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-group">
+                <h3>Card</h3>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Card Image" class="card-image">
+                    <div class="card-content">
+                        <h4 class="card-title">Card Title</h4>
+                        <p class="card-description">This is a sample card description. It can contain various details about the card's topic.</p>
+                        <div class="card-actions">
+                            <button class="btn btn-primary">Action</button>
+                            <button class="btn btn-outline">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-group">
+                <h3>Menu / Dropdown</h3>
+                <div class="dashboard-container">
+                    <div class="dashboard-text">Dashboard</div>
+                    <div class="square-box">
+                        <span class="dropdown-icon">˅</span>
+                        <div class="dropdown-content">
+                            <a href="#profile">Profile</a>
+                            <a href="#account">My Account</a>
+                            <a href="#logout">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-group">
+                <h3>Date Picker</h3>
+                <div class="date-picker">
+                    <input type="text" class="date-input" placeholder="Select a date" readonly>
+                    <button class="date-toggle"><i class="fas fa-calendar-alt"></i></button>
+                    <div class="calendar" style="display: none;"></div>
+                </div>
+            </div>
+
+            <div class="component-group">
+                <h3>Breadcrumbs</h3>
+                <nav class="breadcrumb">
+                    <ol>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#" id="inbox-link">Inbox</a></li>
+                        <li><a href="#" id="important-link">Important</a></li>
+                        <li>Current Page</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <section class="featured-collections">
+            <h2>Featured Collections</h2>
+            <div class="collection-grid">
+                <div class="collection-item">
+                    <img src="https://via.placeholder.com/300x400" alt="Summer Collection">
+                    <h3>Summer Breeze</h3>
+                    <p>Light and airy designs for the perfect summer look</p>
+                </div>
+                <div class="collection-item">
+                    <img src="https://via.placeholder.com/300x400" alt="Autumn Collection">
+                    <h3>Autumn Whispers</h3>
+                    <p>Warm and cozy styles for the fall season</p>
+                </div>
+                <div class="collection-item">
+                    <img src="https://via.placeholder.com/300x400" alt="Evening Wear Collection">
+                    <h3>Midnight Glamour</h3>
+                    <p>Elegant evening wear for special occasions</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
