@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Picker</title>
+    <style>
+        .calendar-icon {
+            cursor: pointer;
+            font-size: 24px;
+            color: blue;
+            margin-left: 10px;
+        }
+        
+        .date-input {
+            font-size: 16px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="calendar-icon">📅</span>
+        <input type="date" class="date-input" id="date-picker" />
+    </div>
+
+    <script>
+        const calendarIcon = document.querySelector('.calendar-icon');
+
+        calendarIcon.addEventListener('click', function() {
+            document.getElementById("date-picker").focus();
+        });
+    </script>
+</body>
+
+</html>
