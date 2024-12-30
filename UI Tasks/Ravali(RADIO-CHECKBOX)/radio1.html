@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .radio-input {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .radio-input * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        .radio-input label {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 0px 20px;
+            width: 220px;
+            cursor: pointer;
+            height: 50px;
+            position: relative;
+        }
+
+        .radio-input label::before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 220px;
+            height: 45px;
+            z-index: -1;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border-radius: 10px;
+            border: 2px solid #435dd8;
+        }
+
+        .radio-input label:hover::before {
+            transition: all 0.2s ease;
+            background-color: #2a2e3c;
+        }
+
+        .radio-input .label:has(input:checked)::before {
+            background-color: #2d3750;
+            border-color: #435dd8;
+            height: 50px;
+        }
+
+        .radio-input .label .text {
+            color: #f67272;
+            border-color: rgb(37, 235, 245);
+            
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .radio-input .label input[type="radio"] {
+            background-color: #202030;
+            appearance: none;
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .r1 {
+            width: 15px;
+            height: 15px;
+        }
+
+        .r2 {
+            width: 20px;
+            height: 20px;
+        }
+
+        .r3 {
+            width: 25px;
+            height: 25px;
+        }
+
+        .size {
+            display: inline-block;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
+            align-content: center;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            padding: 10px;
+            border: 2px solid #435dd8;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ccd5f6;
+        }
+
+        .radio-input .label input[type="radio"]:checked {
+            background-color: #435dd8;
+            -webkit-animation: pulse 0.7s forwards;
+            animation: pulse 0.7s forwards;
+        }
+
+        .radio-input .label input[type="radio"]:before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+            background-color: #f4c4c4;
+            transform: scale(0);
+        }
+
+        .radio-input .label input[type="radio"]:checked::before {
+            transform: scale(1);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(242, 85, 85, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+            }
+        }
+    </style>
+    <title>Radio</title>
+</head>
+<body>
+    <div class="radio-input">
+        <label class="label">
+            <input type="radio" id="value-1" checked name="value-radio" value="value-1" />
+            <p class="text">Web Designer</p>
+        </label>
+        <label class="label">
+            <input type="radio" id="value-2" name="value-radio" value="value-2" />
+            <p class="text">Full-Stack Developer</p>
+        </label>
+        <label class="label">
+            <input type="radio" id="value-3" name="value-radio" value="value-3" />
+            <p class="text">Machine Learning</p>
+        </label>
+        <label class="label">
+            <input type="radio" id="value-4" name="value-radio" value="value-4" />
+            <p class="text">AI Intern</p>
+        </label>
+        <label class="label">
+            <input type="radio" id="value-5" name="value-radio" value="value-5" />
+            <p class="text">MERN Stack</p>
+        </label>
+    </div>
+    <div class="size">
+        <label class="label">
+            <input type="radio" class="r1" name="size-radio" required />
+            <p class="textt">Not Relevant</p>
+        </label>
+        <label class="label">
+            <input type="radio" class="r2" name="size-radio" required />
+            <p class="textt">Relevant</p>
+        </label>
+        <label class="label">
+            <input type="radio" class="r3" name="size-radio" required />
+            <p class="textt">Very Relevant</p>
+        </label>
+    </div>
+    <script>
+        const sizeRadios = document.querySelectorAll('.size input[type="radio"]');
+        const form = document.querySelector('form');
+
+        form.addEventListener('submit', (event) => {
+            let isChecked = false;
+            sizeRadios.forEach(radio => {
+                if (radio.checked) {
+                    isChecked = true;
+                }
+            });
+            if (!isChecked) {
+                event.preventDefault();
+                alert('Please select at least one size option.');
+            }
+        });
+    </script>
+</body>
+</html>

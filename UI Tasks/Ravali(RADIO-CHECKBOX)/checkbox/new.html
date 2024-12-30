@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkboxes</title>
+    <style>
+        .box1 {
+            background-color: rgb(138, 249, 249);
+            text-align: center;
+            padding: 10px;
+            align-items: center;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 10px;
+        }
+        .checkbox-label {
+            display: inline-block;
+            padding: 10px;
+            border: 2px solid #3059fb;
+            border-radius: 5px;
+            margin: 5px;
+            background-color: azure;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .checkbox-label:hover {
+            background-color: #ecf695;
+        }
+        .checkbox-input {
+            width: 20px;
+            height: 20px;
+            margin: 5px;
+            background-color: aliceblue;
+        }
+        .checkbox-input:disabled + .checkbox-label {
+            background-color: #e0e0e0;
+            cursor: not-allowed;
+        }
+        .c1 {
+            width: 16px;
+            height: 16px;
+        }
+        .c2 {
+            width: 24px;
+            height: 24px;
+        }
+        .c3 {
+            width: 26px;
+            height: 26px;
+        }
+        .succ {
+            padding: 20px;
+            margin: 15px;
+        }
+        .checkbox-input:checked + .checkbox-label {
+            background-color: #aee7ce;
+        }
+        .star-container {
+            display: flex;
+            direction: row;
+            display: inline;
+        }
+        .star {
+            cursor: pointer;
+            fill: #ccc;
+            transition: fill 0.2s ease;
+            align-items: center;
+        }
+        .star:hover, .star.selected, .star-container:hover .star:hover ~ .star {
+            fill: gold;
+        }
+    </style>
+</head>
+<body>
+    <section class="box1">
+        <div class="singlecheck">
+            <p>Select your Branch</p>
+            <input type="checkbox" id="option1" name="single-option" class="checkbox-input">
+            <label for="option1" class="checkbox-label">CSM</label>
+
+            <input type="checkbox" id="option2" name="single-option" class="checkbox-input">
+            <label for="option2" class="checkbox-label">CSE</label>
+
+            <input type="checkbox" id="option3" name="single-option" class="checkbox-input">
+            <label for="option3" class="checkbox-label">EEE</label>
+
+            <input type="checkbox" id="option4" name="single-option" class="checkbox-input">
+            <label for="option4" class="checkbox-label">ECE</label>
+
+            <input type="checkbox" id="option5" name="single-option" class="checkbox-input">
+            <label for="option5" class="checkbox-label">CSD</label>
+
+            <input type="checkbox" id="option5" name="single-option" class="checkbox-input" disabled>
+            <label for="option5" class="checkbox-label">MECH</label>
+        </div>
+
+        <div class="multiplecheck">
+            <h4>Skills</h4>
+            <p>Mention Your Skills (Can Select Multiple)</p>
+            <input type="checkbox" id="skill1" name="skills" class="checkbox-input">
+            <label for="skill1" class="checkbox-label">Web Technologies</label><b>(req*)</b>
+
+            <input type="checkbox" id="skill2" name="skills" class="checkbox-input">
+            <label for="skill2" class="checkbox-label">MySQL</label>
+
+            <input type="checkbox" id="skill3" name="skills" class="checkbox-input">
+            <label for="skill3" class="checkbox-label">Python</label>
+
+            <input type="checkbox" id="skill4" name="skills" class="checkbox-input">
+            <label for="skill4" class="checkbox-label">Circuits</label>
+
+            <input type="checkbox" id="skill5" name="skills" class="checkbox-input">
+            <label for="skill5" class="checkbox-label">CAD/CAM</label>
+        </div>
+
+        <div class="succ">
+            <p>Howz the Session??</p>
+            <input type="checkbox" class="c1" id="c1">
+            <label for="c1" class="c1">Bad</label>
+            <input type="checkbox" class="c2" id="c2">
+            <label for="c2" class="c2">Good</label>
+            <input type="checkbox" class="c3" id="c3">
+            <label for="c3" class="c3">Excellent</label>
+        </div>
+
+        <p>Rating</p>
+        <div class="star-container" id="star-container">
+            <svg class="star" data-value="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><path d="M12 .587l3.668 7.431 8.232 1.151-6 5.905 1.454 8.372L12 19.264 5.646 23.446l1.454-8.372-6-5.905 8.232-1.151z"/></svg>
+            <svg class="star" data-value="2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><path d="M12 .587l3.668 7.431 8.232 1.151-6 5.905 1.454 8.372L12 19.264 5.646 23.446l1.454-8.372-6-5.905 8.232-1.151z"/></svg>
+            <svg class="star" data-value="3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><path d="M12 .587l3.668 7.431 8.232 1.151-6 5.905 1.454 8.372L12 19.264 5.646 23.446l1.454-8.372-6-5.905 8.232-1.151z"/></svg>
+            <svg class="star" data-value="4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><path d="M12 .587l3.668 7.431 8.232 1.151-6 5.905 1.454 8.372L12 19.264 5.646 23.446l1.454-8.372-6-5.905 8.232-1.151z"/></svg>
+            <svg class="star" data-value="5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><path d="M12 .587l3.668 7.431 8.232 1.151-6 5.905 1.454 8.372L12 19.264 5.646 23.446l1.454-8.372-6-5.905 8.232-1.151z"/></svg>
+        </div>
+    </section>
+
+    <script>
+        const singleCheckboxes = document.querySelectorAll('.singlecheck .checkbox-input');
+        const multipleCheckboxes = document.querySelectorAll('.multiplecheck .checkbox-input');
+        const sessionCheckboxes = document.querySelectorAll('.succ .checkbox-input');
+
+        singleCheckboxes.forEach(input => {
+            input.addEventListener('change', (event) => {
+                let checkedCount = 0;
+                singleCheckboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        checkedCount++;
+                    }
+                });
+                if (checkedCount > 1) {
+                    input.checked = false;
+                    alert('You can only select one option.');
+                } else {
+                    singleCheckboxes.forEach(checkbox => {
+                        if (checkbox.checked) {
+                            checkbox.nextElementSibling.style.backgroundColor = '#d1e7dd';
+                        } else {
+                            checkbox.nextElementSibling.style.backgroundColor = '#fff';
+                        }
+                    });
+                }
+            });
+        });
+
+        multipleCheckboxes.forEach(input => {
+            input.addEventListener('change', (event) => {
+                if (input.checked) {
+                    input.nextElementSibling.style.backgroundColor = '#d1e7dd';
+                } else {
+                    input.nextElementSibling.style.backgroundColor = '#fff';
+                }
+            });
+        });
+
+        /*rating script*/
+        const stars = document.querySelectorAll('.star');
+        const starContainer = document.getElementById('star-container');
+
+        stars.forEach(star => {
+            star.addEventListener('mouseover', () => {
+                resetStars();
+                highlightStars(star.dataset.value);
+            });
+            star.addEventListener('click', () => {
+                setRating(star.dataset.value);
+            });
+        });
+
+        starContainer.addEventListener('mouseleave', resetStars);
+
+        function resetStars() {
+            stars.forEach(star => {
+                if (!star.classList.contains('selected')) {
+                    star.style.fill = '#ccc';
+                }
+            });
+        }
+
+        function highlightStars(value) {
+            stars.forEach(star => {
+                if (star.dataset.value <= value) {
+                    star.style.fill = 'gold';
+                }
+            });
+        }
+
+        function setRating(value) {
+            stars.forEach(star => {
+                if (star.dataset.value <= value) {
+                    star.classList.add('selected');
+                } else {
+                    star.classList.remove('selected');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
