@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avatar Sizes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
+    }
+
+    .avatars {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .avatar {
+      border-radius: 50%;
+      object-fit: cover;
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h2>Avatar Sizes</h2>
+  <div id="sizes" class="avatars"></div>
+
+  <script>
+    // Define avatar sizes
+    const sizes = {
+      small: { width: 30, height: 30 },
+      medium: { width: 50, height: 50 },
+      large: { width: 70, height: 70 },
+    };
+
+    const sizesContainer = document.getElementById('sizes');
+
+    // Create avatars with dynamic sizes
+    Object.keys(sizes).forEach(size => {
+      const img = document.createElement('img');
+      img.src = 'https://randomuser.me/api/portraits/men/32.jpg';
+      img.alt = `${size} Avatar`;
+      img.style.width = `${sizes[size].width}px`;
+      img.style.height = `${sizes[size].height}px`;
+      img.className = 'avatar';
+      sizesContainer.appendChild(img);
+    });
+  </script>
+</body>
+</html>

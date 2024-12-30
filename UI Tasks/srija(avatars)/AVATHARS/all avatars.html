@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Avatars</title>
+  <style>
+    /* CSS styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      color: red;
+      margin-bottom: 10px;
+    }
+
+    .avatars, .variants {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      background-color: #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .avatar.initial {
+      background-color: orange;
+    }
+
+    .small {
+      width: 30px;
+      height: 30px;
+    }
+
+    .medium {
+      width: 50px;
+      height: 50px;
+    }
+
+    .large {
+      width: 70px;
+      height: 70px;
+    }
+
+    .variant {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .variant.red {
+      background-color: orange;
+    }
+
+    .variant.green {
+      background-color: green;
+    }
+
+    .icon {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Avatars</h2>
+  <div id="avatars" class="avatars"></div>
+
+  <h2>Different Sizes</h2>
+  <div id="sizes" class="avatars"></div>
+
+  <h2>Variants</h2>
+  <div id="variants" class="variants"></div>
+
+  <script>
+    // JavaScript to generate the content dynamically
+    const avatarContainer = document.getElementById('avatars');
+    const sizesContainer = document.getElementById('sizes');
+    const variantsContainer = document.getElementById('variants');
+
+    // Avatar images and initials
+    const avatarData = [
+      { type: 'image', src: 'https://randomuser.me/api/portraits/men/32.jpg' },
+      { type: 'image', src: 'https://randomuser.me/api/portraits/men/45.jpg' },
+      { type: 'image', src: 'https://randomuser.me/api/portraits/women/44.jpg' },
+      { type: 'initial', text: 'H' },
+      { type: 'initial', text: 'N' },
+      { type: 'initial', text: 'OP' },
+    ];
+
+    // Generate avatars
+    avatarData.forEach(data => {
+      const div = document.createElement('div');
+      if (data.type === 'image') {
+        const img = document.createElement('img');
+        img.src = data.src;
+        img.alt = 'Avatar';
+        img.classList.add('avatar');
+        div.appendChild(img);
+      } else {
+        div.textContent = data.text;
+        div.classList.add('avatar', 'initial');
+      }
+      avatarContainer.appendChild(div);
+    });
+
+    // Generate different sizes
+    const sizeClasses = ['small', 'medium', 'large'];
+    sizeClasses.forEach(size => {
+      const img = document.createElement('img');
+      img.src = 'https://randomuser.me/api/portraits/men/32.jpg';
+      img.alt = `${size} Avatar`;
+      img.classList.add('avatar', size);
+      sizesContainer.appendChild(img);
+    });
+
+    // Generate variants
+    const variants = [
+      { type: 'text', text: 'N', color: 'red' },
+      { type: 'icon', icon: '📋', color: 'green' },
+    ];
+
+    variants.forEach(variant => {
+      const div = document.createElement('div');
+      div.classList.add('variant', variant.color);
+      if (variant.type === 'text') {
+        div.textContent = variant.text;
+      } else if (variant.type === 'icon') {
+        div.innerHTML = `<span class="icon">${variant.icon}</span>`;
+      }
+      variantsContainer.appendChild(div);
+    });
+  </script>
+</body>
+</html>

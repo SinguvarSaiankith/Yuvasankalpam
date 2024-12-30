@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avatar Variants</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; }
+    .variants { 
+      display: flex; 
+      justify-content: center; 
+      gap: 20px; /* Increased gap for better spacing */
+      margin-top: 20px; /* Adds some margin from the top */
+    }
+    .variant { 
+      width: 50px; 
+      height: 50px; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      color: white; 
+      font-weight: bold; 
+      border-radius: 5px; 
+    }
+    .red { background-color: orange; }
+    .green { background-color: green; }
+    .icon { font-size: 24px; }
+  </style>
+</head>
+<body>
+  <h2>Avatar Variants</h2>
+  <div class="variants" id="variants"></div>
+  <script>
+    const variants = [
+      { type: 'text', text: 'N', color: 'red' },
+      { type: 'icon', icon: '📋', color: 'green' }
+    ];
+    variants.forEach(v => {
+      const div = document.createElement('div');
+      div.classList.add('variant', v.color);
+      div.innerHTML = v.type === 'text' ? v.text : `<span class="icon">${v.icon}</span>`;
+      document.getElementById('variants').appendChild(div);
+    });
+  </script>
+</body>
+</html>

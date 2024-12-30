@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Avatars</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
+    }
+    h2 {
+      color: red;
+    }
+    .avatars {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h2>Avatar with Text</h2>
+  <div id="avatars" class="avatars"></div>
+
+  <script>
+    const avatarData = [
+      { text: 'H', color: 'orange' },
+      { text: 'N', color: 'green' },
+      { text: 'OP', color: 'blue' }
+    ];
+    document.getElementById('avatars').innerHTML = avatarData
+      .map(data => `<div class="avatar" style="background-color: ${data.color}">${data.text}</div>`)
+      .join('');
+  </script>
+</body>
+</html>
