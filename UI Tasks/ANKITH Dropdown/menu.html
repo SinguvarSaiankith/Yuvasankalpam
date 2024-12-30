@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Menu</title>
+    <style>
+        .dashboard-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .dashboard-text {
+            font-size: 18px;
+            color: blue;
+        }
+        
+        .square-box {
+            width: 23px;
+            height: 23px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid rgb(5, 5, 15);
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            background-color: white;
+        }
+        
+        .dropdown-icon {
+            font-size: 20px;
+            font-weight: bolder;
+            color: rgb(5, 5, 18);
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: -10px;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            min-width: 120px;
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <div class="dashboard-text">Dashboard</div>
+        <div class="square-box">
+            <span class="dropdown-icon">˅</span>
+            <div class="dropdown-content">
+                <a href="#profile">Profile</a>
+                <a href="#account">My Account</a>
+                <a href="#logout">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const squareBox = document.querySelector('.square-box');
+        const dropdownContent = document.querySelector('.dropdown-content');
+        const dropdownIcon = document.querySelector('.dropdown-icon');
+
+        squareBox.addEventListener('click', function() {
+            const isVisible = dropdownContent.style.display === 'block';
+            dropdownContent.style.display = isVisible ? 'none' : 'block';
+            dropdownIcon.textContent = isVisible ? '˅' : '˄';
+        });
+    </script>
+</body>
+
+</html>
